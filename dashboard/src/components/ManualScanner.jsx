@@ -20,7 +20,7 @@ const ManualScanner = () => {
       const endpoint = inputType === 'url' ? '/api/analyze/url' : '/api/analyze/text';
       const payload = inputType === 'url' ? { url: inputValue } : { text: inputValue };
       
-      const res = await fetch(`http://localhost:8000${endpoint}`, {
+      const res = await fetch(`https://aegisx-risk-score-backend.onrender.com${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -24,12 +24,12 @@ const DashboardPage = () => {
         const token = localStorage.getItem('token');
         const headers = { 'Authorization': `Bearer ${token}` };
 
-        const statsRes = await fetch('http://localhost:8000/api/dashboard/stats', { headers });
+        const statsRes = await fetch('https://aegisx-risk-score-backend.onrender.com/api/dashboard/stats', { headers });
         if (!statsRes.ok) throw new Error('Failed to fetch stats');
         const statsData = await statsRes.json();
         setStats(statsData);
 
-        const historyRes = await fetch('http://localhost:8000/api/history', { headers });
+        const historyRes = await fetch('https://aegisx-risk-score-backend.onrender.com/api/history', { headers });
         if (!historyRes.ok) throw new Error('Failed to fetch history');
         const historyData = await historyRes.json();
         if (historyData) setThreats(historyData);

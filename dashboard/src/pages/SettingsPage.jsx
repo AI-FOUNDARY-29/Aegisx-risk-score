@@ -17,7 +17,7 @@ const SettingsPage = () => {
     const fetchSettings = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch('http://localhost:8000/api/settings', {
+        const res = await fetch('https://aegisx-risk-score-backend.onrender.com/api/settings', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (!res.ok) throw new Error('Failed to fetch settings');
@@ -40,7 +40,7 @@ const SettingsPage = () => {
     
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('http://localhost:8000/api/settings', {
+      const res = await fetch('https://aegisx-risk-score-backend.onrender.com/api/settings', {
         method: 'PUT',
         headers: { 
           'Authorization': `Bearer ${token}`,

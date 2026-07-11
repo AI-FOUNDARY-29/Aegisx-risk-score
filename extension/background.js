@@ -1,6 +1,6 @@
 // AegisX Background Service Worker
 
-const API_BASE = 'http://localhost:8000/api';
+const API_BASE = 'https://aegisx-risk-score-backend.onrender.com/api';
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'ANALYZE_URL') {

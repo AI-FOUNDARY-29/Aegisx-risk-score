@@ -10,7 +10,7 @@ const ThreatHistoryPage = () => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch('http://localhost:8000/api/history', {
+        const res = await fetch('https://aegisx-risk-score-backend.onrender.com/api/history', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (!res.ok) throw new Error('Failed to fetch history');

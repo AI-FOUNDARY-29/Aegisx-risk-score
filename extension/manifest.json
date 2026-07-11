@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Autonomous AI digital twin for real-time cybersecurity.",
   "permissions": ["activeTab", "storage", "scripting"],
-  "host_permissions": ["*://*/*", "http://localhost:8000/*"],
+  "host_permissions": ["*://*/*", "https://aegisx-risk-score-backend.onrender.com/*"],
   "action": {
     "default_popup": "popup.html"
   },
