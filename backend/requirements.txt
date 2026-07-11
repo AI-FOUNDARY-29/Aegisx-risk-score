@@ -5,7 +5,7 @@ requests
 groq
 python-dotenv
 sqlalchemy
-passlib[bcrypt]
+bcrypt
 pyjwt
 python-multipart
 pytest
