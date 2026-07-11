@@ -1,10 +1,8 @@
-
 import { Shield, AlertTriangle, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
-
 const ThreatFeed = ({ threatsBlockedToday, threats }) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.1 }}
@@ -14,14 +12,12 @@ const ThreatFeed = ({ threatsBlockedToday, threats }) => {
         <Shield className="accent-cyan" />
         Real-time Threat Interceptions
       </div>
-      
       <div style={{ marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
         Blocked <strong style={{ color: 'var(--text-primary)' }}>{threatsBlockedToday}</strong> threats today.
       </div>
-
       <div className="feed-list">
         {threats.map((threat, idx) => (
-          <motion.div 
+          <motion.div
             key={threat.id}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -44,5 +40,4 @@ const ThreatFeed = ({ threatsBlockedToday, threats }) => {
     </motion.div>
   );
 };
-
 export default ThreatFeed;

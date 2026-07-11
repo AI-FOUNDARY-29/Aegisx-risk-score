@@ -1,10 +1,8 @@
-
 import { Eye } from 'lucide-react';
 import { motion } from 'framer-motion';
-
 const DarkWebAlerts = ({ leaksFound, activeProtections }) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
@@ -29,5 +27,4 @@ const DarkWebAlerts = ({ leaksFound, activeProtections }) => {
     </motion.div>
   );
 };
-
 export default DarkWebAlerts;

@@ -8,5 +8,3 @@ sqlalchemy
 passlib[bcrypt]
 pyjwt
 python-multipart
-pytest
-httpx

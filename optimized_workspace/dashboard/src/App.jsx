@@ -5,33 +5,26 @@ import DashboardPage from './pages/DashboardPage';
 import ThreatHistoryPage from './pages/ThreatHistoryPage';
 import SettingsPage from './pages/SettingsPage';
 import LoginPage from './pages/LoginPage';
-
 function App() {
   const [theme, setTheme] = useState('dark');
   const [token, setToken] = useState(localStorage.getItem('token'));
-
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
-
   const toggleTheme = () => {
     setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
   };
-
   const handleLogin = (newToken) => {
     localStorage.setItem('token', newToken);
     setToken(newToken);
   };
-
   const handleLogout = () => {
     localStorage.removeItem('token');
     setToken(null);
   };
-
   if (!token) {
     return <LoginPage onLogin={handleLogin} />;
   }
-
   return (
     <BrowserRouter>
       <div className="app-layout">
@@ -47,5 +40,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;

@@ -55,17 +55,6 @@
       text-align: center;
       margin-top: 8px;
     }
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    .spinner {
-      animation: spin 1s linear infinite;
-      display: inline-block;
-      width: 32px;
-      height: 32px;
-      color: #06b6d4;
-    }
   </style>
 </head>
 <body>
@@ -73,21 +62,14 @@
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
     AegisX
   </div>
-  
   <div class="status-card">
-    <div id="statusIcon" class="status-icon">
-      <svg class="spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-      </svg>
-    </div>
+    <div id="statusIcon" class="status-icon">⏳</div>
     <div id="statusText" class="status-text">Analyzing Page...</div>
     <div id="statusDetails" class="details">Awaiting AI scan results.</div>
   </div>
-
   <div class="footer">
     Real-time protection active.
   </div>
-
   <script src="popup.js"></script>
 </body>
 </html>
