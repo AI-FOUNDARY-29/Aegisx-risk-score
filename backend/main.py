@@ -68,14 +68,20 @@ class SettingsUpdate(BaseModel):
 # --- Auth Endpoints ---
 @app.post("/api/auth/register")
 def register(user: UserCreate, db: Session = Depends(get_db)):
-    db_user = db.query(User).filter(User.username == user.username).first()
-    if db_user:
-        raise HTTPException(status_code=400, detail="Username already registered")
-    hashed_password = auth.get_password_hash(user.password)
-    new_user = User(username=user.username, password_hash=hashed_password)
-    db.add(new_user)
-    db.commit()
-    return {"message": "User created successfully"}
+    try:
+        db_user = db.query(User).filter(User.username == user.username).first()
+        if db_user:
+            raise HTTPException(status_code=400, detail="Username already registered")
+        hashed_password = auth.get_password_hash(user.password)
+        new_user = User(username=user.username, password_hash=hashed_password)
+        db.add(new_user)
+        db.commit()
+        return {"message": "User created successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f'Registration Error: {e}')
+        raise HTTPException(status_code=400, detail=str(e))
 
 @app.post("/api/auth/login")
 def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
